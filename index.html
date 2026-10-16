@@ -1,49 +1,86 @@
+
 <!DOCTYPE html>
-<html lang="t">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>calcolatore-BMI-in-PHP-con-mockup</title>
+    <title>Calcolatore BMI</title>
+
     <style>
-        body{
+        body {
             background-color: #f1f3f5;
+            font-family: Arial, sans-serif;
         }
 
-        main{
+        main {
             padding: 0 60px;
-            padding-bottom: 0;
-            padding-left: 60px;
-            padding-right: 60px;
         }
 
-        .card{
+        h1 {
+            text-align: center;
+        }
+
+        .card {
             background-color: white;
             padding: 24px;
             border-radius: 10px;
+            max-width: 300px;
+            margin: 40px auto;
+        }
+
+        .rigaForm {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #212529;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
         }
     </style>
 </head>
+
 <body>
     <main>
-        <h1 class="title"></h1>
+        <h1>Calcolatore BMI</h1>
+
         <div class="card">
-            <form>
+            <form action="calcoloBMI.php" method="post">
+
                 <div class="rigaForm">
                     <label for="nome">Nome</label>
-                    <input id="nome" type="text" name="nome"></input>
+                    <input id="nome" type="text" name="nome" required>
                 </div>
+
                 <div class="rigaForm">
-                    <label for=""></label>
-                    <input type="text" name="peso"></input>
+                    <label for="peso">Peso (kg)</label>
+                    <input id="peso" type="number" name="peso" step="any" min="1" required>
                 </div>
+
                 <div class="rigaForm">
-                    <label for=""></label>
-                    <input type="text" name="altezza"></input>
+                    <label for="altezza">Altezza (cm)</label>
+                    <input id="altezza" type="number" name="altezza" step="any" min="1" required>
                 </div>
-                <div class="rigaForm">
-                    <label for=""></label>
-                    <input type="text" name="nome"></input>
-                </div>
+
+                <button type="submit">Calcola</button>
+
             </form>
         </div>
     </main>
